@@ -5,14 +5,17 @@ password : 123 <br>
 <br>
 <br>
 Petugas: <br>
-Username => petugas <br>
-password => petugas <br>
+Username : petugas <br>
+password : petugas <br>
 <br>
 <br>
 user:<br>
-username => ismoyo23<br>
-passeord => ismoyo23<br>
+username : ismoyo23<br>
+passeord : ismoyo23<br>
 
+<br>
+
+Note : file database ada di folder mysqlku
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
