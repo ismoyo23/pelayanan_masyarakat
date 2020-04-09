@@ -1,14 +1,17 @@
-Admin:
-username => admin
-password => 123
+Admin: <br>
+username : admin <br>
+password : 123 <br>
 
-Petugas:
-Username => petugas
-password => petugas
-
-user:
-username => ismoyo23
-passeord => ismoyo23
+<br>
+<br>
+Petugas: <br>
+Username => petugas <br>
+password => petugas <br>
+<br>
+<br>
+user:<br>
+username => ismoyo23<br>
+passeord => ismoyo23<br>
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
