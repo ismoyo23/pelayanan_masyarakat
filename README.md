@@ -1,3 +1,15 @@
+Admin:
+username => admin
+password => 123
+
+Petugas:
+Username => petugas
+password => petugas
+
+user:
+username => ismoyo23
+passeord => ismoyo23
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
