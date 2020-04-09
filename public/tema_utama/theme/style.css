@@ -1,0 +1,130 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.color-white {
+    color: white !important;
+}
+
+.font-cursive {
+    font-family: 'Sriracha', cursive;
+}
+
+.height-50px {
+    height: 70px;
+}
+
+.scroll {
+
+    overflow: scroll;
+
+}
+
+
+
+/*warna hitam tidak pekat*/
+.bg-black-3 {
+    background-color: #26292b;
+}
+
+.margin-top-40px {
+    margin-top: 40px;
+}
+
+.padding-top-auto {
+    padding-top: auto;
+}
+
+.padding-top-150 {
+    padding-top: 150px;
+}
+
+
+.hover-aqua:hover {
+    background-color: aqua;
+}
+
+.menu-active{
+     background-color: aqua;
+}
+@media (min-width: 992px) {
+
+    .height-82px {
+        height: 82px;
+    }
+
+    .height-45px {
+        height: 45px;
+    }
+
+    .width-20px {
+        width: 20px;
+    }
+
+    .width-40px {
+        width: 40px;
+    }
+
+    .grey-color {
+        color: rgb(117, 112, 112);
+    }
+
+    .width-600 {
+        width: 400px;
+    }
+
+    .hidden-deskop {
+        opacity: 0;
+    }
+
+    .margin-top-45px {
+        margin-top: 45px;
+    }
+
+    .margin-left-140px {
+        margin-left: 140px;
+    }
+
+    .height-deskop-280px {
+        height: 280px;
+    }
+
+    .margin-left-200px {
+        margin-left: 200px;
+    }
+
+
+
+}
+
+/* jika maksimal resolusinya 988px */
+@media (max-width: 990px) {
+    .hidden-deskop {
+        opacity: 100%;
+    }
+
+    .hidden-android {
+        opacity: 1%;
+    }
+
+    .mr-top-android-20px {
+        margin-top: 20px;
+    }
+
+    .margin-top--80px {
+        margin-top: -80px;
+    }
+
+    .from-login {
+        margin-right: 300px;
+    }
+
+    .center-android {
+        text-align: center;
+    }
+
+}
