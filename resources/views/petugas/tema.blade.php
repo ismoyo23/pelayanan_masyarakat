@@ -36,6 +36,18 @@
     .myCalendar .month-head>button {
         padding: 15px;
     }
+
+    @media (max-width: 992px) {
+        .dropdown{
+            display: none;
+        }
+     }
+
+     @media (min-width: 992px) { 
+        .logout{
+            display: none;
+        }
+      }
 </style>
 
 <body>
@@ -68,21 +80,31 @@
         </div>
     </nav>
 
-    <div class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <div style="height: 39px;" class="collapse navbar-collapse " id="navbarNavAltMarkup">
-            <div class="container">
-                <div class="navbar-nav">
-
-                    <a class="nav-item nav-link menu" style="color: purple;" href="LaporanMasuk"> <span
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-item nav-link menu" style="color: purple;" href="LaporanMasuk"> <span
                             class="fa fa-fw fa-send-o" ></span> Laporan Masuk</a>
-                    <a class="nav-item nav-link menu" style="color: purple;" href="PermasalahanTuntas"> <span
+      </li>
+      <li class="nav-item active">
+        <a class="nav-item nav-link menu" style="color: purple;" href="PermasalahanTuntas"> <span
                             class="fa fa-book"></span>Permasalahan Tuntas</a>
-                </div>
-            </div>
-        </div>
-    </div>
+      </li>
+      <li class="nav-item active logout">
+                <a class="nav-item nav-link" style="color: purple;" href="{{ url('/admin/logout') }}" id="petugas"> <span
+                                    class="fa fa-fw fa-sign-out"></span> logout</a>
+        </li>         
+  </div>
+  </div>
+</nav>
+
 
  <div class="container">
    <div id="body" style="margin-top: 30px;"></div>
