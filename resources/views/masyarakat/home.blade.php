@@ -18,7 +18,7 @@
   </div>
 
   <!-- Modal -->
-<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -120,7 +120,7 @@
               </li>
 
             <li class="nav-item hidden-deskop">
-                <a data-toggle="modal" data-target="#exampleModalScrollable" class="nav-link color-white hover-aqua" href="login.html"> <span class="fa fa-fw fa-users"></span>
+                <a data-toggle="modal" data-target="#about" class="nav-link color-white hover-aqua" href="login.html"> <span class="fa fa-fw fa-users"></span>
                 About</a>
             </li>
             <li class="nav-item hidden-deskop">
@@ -178,7 +178,7 @@
 
 
             <li class="nav-item">
-            <a style="border: 2px solid black; height: 79px; width: 90px;" data-toggle="modal" data-target="#exampleModalScrollable" class="btn color-white hover-aqua" href="">
+            <a style="border: 2px solid black; height: 79px; width: 90px;" data-toggle="modal" data-target="#about" class="btn color-white hover-aqua" href="">
                 <!-- notifikasi -->
 
                 <span class="fa fa-fw fa-users" style="font-size: 33px;"></span> <span style="font-size: 14px;">
@@ -217,7 +217,7 @@
         </span> <span style="font-size: 14px;">Coment</span>
 
 
-        <a data-toggle="modal" data-target="#exampleModalScrollable" href="" class="btn btn hover-aqua color-white"
+        <a data-toggle="modal" data-target="#about" href="" class="btn btn hover-aqua color-white"
         style="border: 2px solid black; height: 79px; width: 101px; position: absulute;">
 
 
