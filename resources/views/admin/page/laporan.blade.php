@@ -49,7 +49,7 @@
                             <a class="print"></a>
                         </div>
                         <label for="" class="tgl_tmpl" style="margin-left:auto;"></label>
-                        <table class="table table-striped table-bordered data">
+                        <table class="table table-striped table-bordered data table-responsive-sm">
 
                             <thead>
                                 <tr>
