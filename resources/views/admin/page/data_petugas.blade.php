@@ -17,7 +17,7 @@
                                 </li>
                             </ul>
                         <div class="container">
-                            <div class=" align-items-center">
+                            <div class=" align-items-center table-responsive-sm">
                             <!-- table user -->
                             <div class="user">
                                 <table class="table table-striped table-bordered data">
