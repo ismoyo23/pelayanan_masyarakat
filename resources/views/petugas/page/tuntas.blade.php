@@ -3,7 +3,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <div class="shadow-lg p-3 mb-5 bg-white rounded ">
 
-            <table class="table table-bordered data">
+            <table class="table table-bordered data table-responsive-sm">
         <thead>
             <tr>
             <th scope="col">Nama</th>
