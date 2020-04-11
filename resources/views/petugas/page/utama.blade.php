@@ -76,7 +76,7 @@
 
     </div>
     </nav>
-    <div class="tab-content" id="nav-tabContent">
+    <div class="tab-content table-responsive-sm" id="nav-tabContent">
         <div class="tab-pane fade show active" id="laporan-masuk" role="tabpanel" aria-labelledby="nav-home-tab">
             <table class="table table-bordered data">
                     <thead>
