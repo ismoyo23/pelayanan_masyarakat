@@ -35,6 +35,18 @@
     .myCalendar .month-head>button {
         padding: 15px;
     }
+
+    @media (max-width: 992px) {
+        .dropdown{
+            display: none;
+        }
+     }
+
+     @media (min-width: 992px) { 
+        .logout{
+            display: none;
+        }
+      }
 </style>
 
 <body>
@@ -66,25 +78,38 @@
         </div>
         </div>
     </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-    <div class="navbar navbar-expand-lg navbar-light bg-light shadow-lg">
+          <div class="container">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-item nav-link menu" id="dashboard" style="color: purple;" href="#"> <span
+                                    class="fa fa-fw fa-tachometer" ></span> Dashboard</a>
+              </li>
 
+              <li class="nav-item active">
+                <a class="nav-item nav-link menu" style="color: purple;" href="#" id="laporan"> <span
+                                    class="fa fa-fw fa-print"></span>Cetak Laporan</a>
+              </li>
 
-        <div style="height: 39px;" class="collapse navbar-collapse " id="navbarNavAltMarkup">
-            <div class="container">
-                <div class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-item nav-link menu" style="color: purple;" href="#" id="petugas"> <span
+                                    class="fa fa-fw fa-user"></span> Person</a>
+              </li>
 
-                    <a class="nav-item nav-link menu" id="dashboard" style="color: purple;" href="#"> <span
-                            class="fa fa-fw fa-tachometer" ></span> Dashboard</a>
-                    <a class="nav-item nav-link menu" style="color: purple;" href="#" id="laporan"> <span
-                            class="fa fa-fw fa-print"></span>Cetak Laporan</a>
-                    <a class="nav-item nav-link menu" style="color: purple;" href="#" id="petugas"> <span
-                            class="fa fa-fw fa-user"></span> Person</a>
-                </div>
+              <li class="nav-item active logout">
+                <a class="nav-item nav-link" style="color: purple;" href="{{ url('/admin/logout') }}" id="petugas"> <span
+                                    class="fa fa-fw fa-sign-out"></span> logout</a>
+              </li>
+            </ul>
             </div>
-        </div>
-    </div>
-
+          </div>
+</nav>
+    
    <div id="body"></div>
     
 <!-- card lihat -->
