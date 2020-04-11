@@ -112,11 +112,11 @@
         <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Terverifikasi</a>
     </div>
     </nav>
-    <div class="tab-content" id="nav-tabContent">
+    <div class="tab-content table-responsive-sm" id="nav-tabContent row">
 
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         
-        <table class="table table-striped table-bordered data">
+        <table class="table table-striped table-bordered data ">
                                 <thead>
                                     <tr>
                                         <th>Nama</th>
