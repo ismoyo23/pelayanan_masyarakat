@@ -11,7 +11,7 @@
     <th>Isi Laporan</th>
     <th>Tanggal</th>
     <th>subjek</th>
-    <th>wlayah</th>
+    
 </tr>
 @foreach($print as $pr)
 <tr>
@@ -19,7 +19,7 @@
     <td>{{ $pr->isi_laporan }}</td>
     <td>{{ $pr->tgl_pengaduan }}</td>
     <td>{{ $pr->subjek }}</td>
-    <td>{{ $pr->wilayah }}</td>
+    
 
 </tr>
 @endforeach
