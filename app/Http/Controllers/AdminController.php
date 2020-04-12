@@ -221,12 +221,13 @@ class AdminController extends Controller
     public function addPerson(Request $request)
     {
         $petugas = new Petugas;
+        $petugas->id_petugas = $request->nik;
         $petugas->nm_petugas = $request->nama;
         $petugas->username = $request->username;
         $petugas->password = bcrypt($request->password);
         $petugas->tlp = $request->tlp;
         $petugas->level = $request->level;
-        $petugas->id = 3;
+        $petugas->id = $request->nik;
         $petugas->save();
     }
 
@@ -286,6 +287,7 @@ class AdminController extends Controller
     public function UpdateAdmin(Request $request, $id)
     {
         Petugas::where('id_petugas', $id)->update([
+
             'nm_petugas' => $request->nama,
             'username' => $request->username,
             'tlp' => $request->tlp,
