@@ -83,7 +83,12 @@
 
         <div class="col-md-4">
             <div class="shadow-lg p-3 mb-4 bg-white rounded" style="margin-top: 20px;">
-    
+                    <div class="form-group nik">
+                        <label for="exampleInputEmail1">Nik</label>
+                        <input type="text" class="form-control nik" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nik">
+                        <div class="valid-nik"></div>
+                    </div>
+
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama</label>
                         <input type="text" class="form-control nama" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama">
@@ -234,7 +239,9 @@ $('.cancel').hide();
                     $.ajax({
                         url: '/admin/LihatAdminId/'+id,
                         success: data =>{
+                            var level = '';
                             data.forEach(dta => {
+                                $('.nik').hide();
                                 $('.nama').val(dta.nm_petugas);
                                 $('.username').val(dta.username);
                                 $('.hp').val(dta.tlp);
@@ -242,7 +249,16 @@ $('.cancel').hide();
                                 $('.daftar').hide();
                                 $('.update').show();
                                 $('.cancel').show();
+                                if (dta.level == 'petugas') {
+                                    level += `<option value="admin">Admin</option>
+                                                <option selected value="petugas">Petugas</option>`;
+                                }else{
+                                    level += `<option selected value="admin">Admin</option>
+                                                <option  value="petugas">Petugas</option>`;
+                                }
                             });
+
+                            $('.level').html(level)
                         }
                     })
                     e.preventDefault();
@@ -250,6 +266,7 @@ $('.cancel').hide();
                 
                 // tombol batal di click
                 $('.cancel').on('click', function(){
+                    $('.nik').show();
                     $('.nama').val('');
                                 $('.username').val('');
                                 $('.hp').val('');
@@ -311,11 +328,12 @@ $('.cancel').hide();
             // update admin
             $('.edit-admin').on('click', function(){
         
-                var id = $(this).attr('imdbId')
+                var id = $('.nik').val();
                 $('.update').on('click', function(){
                     var id_petugas = id;
                     console.log(id_petugas)
                 var data = {
+                    "nik": $('.nik').val(),
                     "nama": $('.nama').val(),
                     "username": $('.username').val(),
                     "tlp": $('.hp').val(),
@@ -334,6 +352,7 @@ $('.cancel').hide();
                     success: function(){
                         $('.edit-admin').stop()
                         swal("Berhasil!", "Data Berhasil Di Di Update", "success");
+                    $('.nik').val('')
                     $('.nama').val('')
                     $('.username').val('')
                     $('.hp').val('')
@@ -495,11 +514,16 @@ $('.cancel').hide();
     
 
     $('.daftar').on('click', function(){
+        var nik = $('.nik').val().length;
         var nama = $('.nama').val().length;
         var username = $('.username').val().length;
         var password = $('.password').val().length;
         var hp = $('.hp').val().length;
-        if (nama == 0) {
+        if (nik < 15) {
+            var valid_nik = '<small id="emailHelp" class="form-text text-danger">karakter harus lebih dari 15</small>';
+            $('.valid-nik').html(valid_nik);
+            $('.nik').addClass('is-invalid');
+        }else if (nama == 0) {
             var valid_nama = '<small id="emailHelp" class="form-text text-danger">form nama harus diisi.</small>';
             $('.valid-nama').html(valid_nama);
             $('.nama').addClass('is-invalid');
@@ -519,6 +543,7 @@ $('.cancel').hide();
         }else{
         
             var data = {
+                    "nik": $('.nik').val(),
                     "nama": $('.nama').val(),
                     "username": $('.username').val(),
                     "password": $('.password').val(),
@@ -538,6 +563,10 @@ $('.cancel').hide();
                 data: data,
                 success: function(){
                     swal("Berhasil!", "Data Berhasil Di simpan", "success");
+                    // nik
+                    $('.valid-nik').html('');
+                    $('.nik').removeClass('is-invalid');
+                    $('.nik').val('');
                     // nama
                     $('.valid-nama').html('');
                     $('.nama').removeClass('is-invalid');
