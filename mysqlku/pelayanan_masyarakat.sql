@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Apr 2020 pada 12.33
+-- Waktu pembuatan: 12 Apr 2020 pada 08.56
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.4
 
@@ -95,7 +95,8 @@ CREATE TABLE `pengaduan` (
 
 INSERT INTO `pengaduan` (`id_pengaduan`, `tgl_pengaduan`, `foto`, `isi_laporan`, `nik`, `subjek`, `status`) VALUES
 (28, '2020-04-09', 'images(5).jpg', 'laporan ke satu', '092123212312312', 'Penyakit Menular', 'terverifikasi'),
-(30, '2020-04-09', 'corona virus.png', 'laporan 3', '092123212312312', 'Jalanan Rusak', 'selesai');
+(30, '2020-04-09', 'corona virus.png', 'laporan 3', '092123212312312', 'Jalanan Rusak', 'selesai'),
+(31, '2020-04-11', 'terbobol.png', 'bencana alam melanda', '092123212312312', 'Bencana Alam', '0');
 
 -- --------------------------------------------------------
 
@@ -104,13 +105,13 @@ INSERT INTO `pengaduan` (`id_pengaduan`, `tgl_pengaduan`, `foto`, `isi_laporan`,
 --
 
 CREATE TABLE `petugas` (
-  `id_petugas` int(11) NOT NULL,
+  `id_petugas` varchar(100) NOT NULL,
   `nm_petugas` varchar(100) NOT NULL,
   `username` varchar(25) NOT NULL,
   `password` varchar(100) NOT NULL,
   `tlp` int(11) NOT NULL,
   `level` enum('admin','petugas','','') NOT NULL,
-  `id` int(100) NOT NULL
+  `id` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -118,9 +119,10 @@ CREATE TABLE `petugas` (
 --
 
 INSERT INTO `petugas` (`id_petugas`, `nm_petugas`, `username`, `password`, `tlp`, `level`, `id`) VALUES
-(1, 'admin', 'admin', '$2y$10$QirXPXgng/BUksPPPn.fBO0xBgA0q1lZtUNxOCi2BsoxFv4amnPqi', 912131, 'admin', 1),
-(26, 'petugas', 'petugas', '$2y$10$ow8L0gLzBxzuqGCT8dbAfuCTUsgBqXq.D.IwBlu.XsGQfYgbjkFz6', 92342, 'petugas', 3),
-(27, 'petugas1', 'petugas1', '$2y$10$UwiOIAp8Ue4VlE7vCROle.d9fhJL7XG75SiaIUL/CbIhHIcY9cBn.', 78989, 'petugas', 3);
+('098382832123232', 'M Ismoyo', 'admin23', '$2y$10$m2y9z7.Ap9WMrzNsGzeYMe82u0SHRE0/5ehNhsht6O4Xl3C9x1kMK', 9890980, 'admin', '098382832123232'),
+('1', 'admin ismoyo', 'admin', '$2y$10$QirXPXgng/BUksPPPn.fBO0xBgA0q1lZtUNxOCi2BsoxFv4amnPqi', 912131, 'admin', '1'),
+('27', 'petugas1', 'petugas', '$2y$10$UwiOIAp8Ue4VlE7vCROle.d9fhJL7XG75SiaIUL/CbIhHIcY9cBn.', 78989, 'petugas', '0'),
+('28', 'petugas', 'petugas', '$2y$10$jtoz1C3Bc8hXmFM/7ic7dOE4gkV52rvPUop1f/AtZOL52ch9s7EEi', 890980980, 'petugas', '0');
 
 -- --------------------------------------------------------
 
@@ -133,7 +135,7 @@ CREATE TABLE `tanggapan` (
   `id_pengaduan` int(11) NOT NULL,
   `tgl_tanggapan` date NOT NULL,
   `tanggapan` text NOT NULL,
-  `id_petugas` int(50) NOT NULL,
+  `id_petugas` varchar(50) NOT NULL,
   `read` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -142,8 +144,8 @@ CREATE TABLE `tanggapan` (
 --
 
 INSERT INTO `tanggapan` (`id_tanggapan`, `id_pengaduan`, `tgl_tanggapan`, `tanggapan`, `id_petugas`, `read`) VALUES
-(89, 28, '2020-04-09', 'siap', 26, 0),
-(90, 28, '2020-04-09', 'siap siap', 1, 0);
+(89, 28, '2020-04-09', 'siap', '26', 0),
+(90, 28, '2020-04-09', 'siap siap', '1', 0);
 
 --
 -- Indexes for dumped tables
@@ -196,36 +198,13 @@ ALTER TABLE `dukungan`
 -- AUTO_INCREMENT untuk tabel `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `id_pengaduan` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
-
---
--- AUTO_INCREMENT untuk tabel `petugas`
---
-ALTER TABLE `petugas`
-  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_pengaduan` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT untuk tabel `tanggapan`
 --
 ALTER TABLE `tanggapan`
   MODIFY `id_tanggapan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
-
---
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `pengaduan`
---
-ALTER TABLE `pengaduan`
-  ADD CONSTRAINT `pengaduan_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `masyarakat` (`nik`);
-
---
--- Ketidakleluasaan untuk tabel `tanggapan`
---
-ALTER TABLE `tanggapan`
-  ADD CONSTRAINT `tanggapan_ibfk_1` FOREIGN KEY (`id_pengaduan`) REFERENCES `pengaduan` (`id_pengaduan`),
-  ADD CONSTRAINT `tanggapan_ibfk_2` FOREIGN KEY (`id_petugas`) REFERENCES `petugas` (`id_petugas`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
