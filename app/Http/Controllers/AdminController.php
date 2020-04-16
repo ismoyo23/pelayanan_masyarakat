@@ -125,6 +125,7 @@ class AdminController extends Controller
         $tanggapan->tgl_tanggapan = Date('Y-m-d');
         $tanggapan->tanggapan = $request->form_tanggapan;
         $tanggapan->id_petugas = $request->id_petugas;
+        $tanggapan->read = '1';
         $tanggapan->save();
     }
 
